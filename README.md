@@ -63,12 +63,16 @@ GROUP BY downsample(ObservationTimeStamp), a.Node.Caption, a.NodeID
 ORDER BY time DESC
 ```
 ## Installation Manually
-1. Download sources zip file. 
-2. Extract the zip file into the data/plugins subdirectory for Grafana.
+1. cd /usr/share/grafana/bin
+2. grafana cli --insecure --pluginUrl https://github.com/trooperthorn/grafana-swis-datasource/archive/refs/tags/SWIS.zip plugins install SolarWinds
 3. Because this plugin is not signed, you need to add exception into your grafana configuration. Navigate to grafana folder /conf/defaults.ini and find option *allow_loading_unsigned_plugins* which has to be equal
-4. Note: this is near the bottom of the config file, under the [plugins] section under #### External image storage ####
+   Debian Location: /etc/grafana/grafana.ini
+In the Security Section:
+ angular_support_enabled	= true
+   Note: this is near the bottom of the config file, under the [plugins] section under #### External image storage ####
 ```
 allow_loading_unsigned_plugins = solarwinds-swis-datasource
 ```
-3. Restart the Grafana server
-4. To make sure the plugin was installed, check the list of installed data sources.
+4. Restart the Grafana server: systemctl restart grafana
+5. To make sure the plugin was installed, check the list of installed data sources.
+6. If not found, check  nano /var/log/grafana/grafana.log
