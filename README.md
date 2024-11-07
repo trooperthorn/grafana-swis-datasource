@@ -1,9 +1,13 @@
 # SolarWinds SWIS DataSource based on Simple JSON Datasource
+Angular plugin
+This data source plugin uses a deprecated, legacy platform based on AngularJS and will stop working in future releases of Grafana.
 
 SWIS (SolarWinds Information Service) uses SWQL language - [learn more](https://github.com/solarwinds/OrionSDK/wiki/About-SWIS)
 
 DataSource connects to SWIS HTTP REST endpoint. As URl specify SWIS HTTP endpoint address which is by default 
 - https://orionservername:17778/SolarWinds/InformationService/v3/Json/
+  Use 17774 if 17778 does not work, or if you replaced with a domain certificate (centralized Server).
+- https://orionservername:17774/SolarWinds/InformationService/v3/Json/
 
 Unfortunately this endpoint doesn't support CORS so we can connect only via Server(default) 
 and due to self-signed certificate we need to check option 'Skip TLS Verify'. Anonymous connection
