@@ -65,7 +65,8 @@ ORDER BY time DESC
 ## Installation Manually
 1. Download sources zip file. 
 2. Extract the zip file into the data/plugins subdirectory for Grafana.
-3. Because this plugin is not signed, you need to add exception into your grafana configuration. Navigate to grafana folder /conf/defaults.ini and find option *allow_loading_unsigned_plugins* which has to be equal 
+3. Because this plugin is not signed, you need to add exception into your grafana configuration. Navigate to grafana folder /conf/defaults.ini and find option *allow_loading_unsigned_plugins* which has to be equal
+4. Note: this is near the bottom of the config file, under the [plugins] section under #### External image storage ####
 ```
 allow_loading_unsigned_plugins = solarwinds-swis-datasource
 ```
